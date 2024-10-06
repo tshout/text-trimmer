@@ -67,4 +67,9 @@ function trimText(text, options = {}) {
   return trimmedText + ellipsis;
 }
 
-module.exports = { trimText };
+// Utility function to escape special characters in a string for use in a regex
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+module.exports = { trimText, escapeRegExp };
